@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+    url: jdbc:postgresql://salesapp.cysihwxgikho.us-east-2.rds.amazonaws.com:5432/sales_app_dev?currentSchema=sales_app
+    username: salesapp
+    password: s2fr1234
+jwt :
+  header: Authorization
+  secret : bmp
+  expiration: 604800
+  route-authentication-path : /auth
+  route-authentication-refresh : /refresh

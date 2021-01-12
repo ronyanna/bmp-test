@@ -1,1 +1,1 @@
-# bmp-test
+Test for Bmp
