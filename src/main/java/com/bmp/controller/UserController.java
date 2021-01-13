@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @PostMapping(path="/searchText/{count}",consumes = "application/json",produces = "application/pdf")
-    public ResponseEntity<Map>searchTopCountedText(HttpServletResponse response, @PathVariable int count, @RequestBody Map<String,Object>dataTask) throws IOException {
+    public ResponseEntity<byte[]>searchTopCountedText(HttpServletResponse response, @PathVariable int count, @RequestBody Map<String,Object>dataTask) throws IOException {
         Map<String,Object> mp=new HashMap<>();
         byte[] bytes=textProcessor.findWordCountAndWriteInCsv(dataTask);
         response.setHeader("Expires", "0");
